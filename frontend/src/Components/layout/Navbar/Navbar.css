@@ -1,0 +1,84 @@
+/* Navbar Main Wrapper */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: #efebeb;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: Arial, sans-serif;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Menu List */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-menu li a:hover {
+  color: #0073ff;
+}
+
+/* Active NavLink */
+.nav-menu li a.active {
+  color: #0073ff;
+  font-weight: bold;
+  border-bottom: 2px solid #0073ff;
+  padding-bottom: 3px;
+}
+
+/* Register Button */
+.register-btn {
+  padding: 8px 16px;
+  background: #0073ff;
+  color: white !important;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #005ed1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

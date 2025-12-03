@@ -1,0 +1,80 @@
+/* Main container */
+.addtask-container {
+  /* width: 400px; */
+  /* margin: 50px auto;
+  padding: 25px; */
+  /* background: #ffffff; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+  font-family: Arial, sans-serif;
+}
+
+/* Form title */
+.addtask-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input group */
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #444;
+}
+
+.input-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* Submit button */
+.submit-btn {
+  padding: 10px 20px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Cancel button */
+.cancel-btn {
+  padding: 10px 20px;
+  background: #dc3545;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+.cancel-btn:hover {
+  background: #b52d37;
+}
