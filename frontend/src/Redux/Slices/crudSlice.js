@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const curdApi = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl : import.meta.env.VITE_API_URL}),
+    baseQuery: fetchBaseQuery({ baseUrl : import.meta.env.VITE_API_URL || 'http://localhost:3000'}),
     tagTypes: ['Task'],
     endpoints: (builder) => ({
         // get task
@@ -11,7 +11,7 @@ export const curdApi = createApi({
             providesTags: ['Task']
         }),
         // addTask: builder.mutation
-        addTask: builder.mutation({
+        addTask: builder.mutation({ 
             query: (task) => ({
                 url: '/curd/createitem',
                 method: 'POST',
@@ -26,7 +26,6 @@ export const curdApi = createApi({
                         draft.unshift(newTask);   // UI me pehle hi dikha do
                     })
                 );
-
                 try {
                     await queryFulfilled;    // agar API success
                 } catch {

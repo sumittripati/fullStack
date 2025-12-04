@@ -1,18 +1,24 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const AuthSlice = createApi({
+    reducerPath: "authApi", 
     baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_API_URL}),
-    tagTypes: ['Auth'],
     endpoints: (builder) => ({
-        login: builder.mutation({
+        register: builder.mutation({
             query: (data) => ({
                 url: '/api/register',
                 method: 'POST',
                 body: data
             }),
-            invalidatesTags: ['Auth']
-        })
+        }),
+        login: builder.mutation({
+            query: (data) => ({
+                url: '/api/login',
+                method: 'POST',
+                body: data
+            }),
+        }),
     })
 })
 
-export const { useLoginMutation } = AuthSlice;
+export const { useRegisterMutation, useLoginMutation } = AuthSlice;

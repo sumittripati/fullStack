@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { curdApi } from "./Slices/crudSlice";
-import {AuthSlice} from './Slices/loginSlice'
+import { AuthSlice } from "./Slices/authSlice"
 
 
 export const store = configureStore({
@@ -9,6 +9,6 @@ export const store = configureStore({
         [AuthSlice.reducerPath]: AuthSlice.reducer
     },
     middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(curdApi.middleware).concat(AuthSlice.middleware),
+        getDefaultMiddleware().concat(curdApi.middleware).concat(AuthSlice.middleware),
     devTools: true
 })

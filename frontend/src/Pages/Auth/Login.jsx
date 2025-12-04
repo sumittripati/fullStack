@@ -1,9 +1,11 @@
 // import React from 'react'
 import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom";
+import { useLoginMutation } from "../../Redux/Slices/authSlice";
 
 
 const Login = () => {
+  const [login, { isLoading, isError, error: loginError }] = useLoginMutation();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -19,8 +21,14 @@ const Login = () => {
   }
 
   // handle Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      await login(formData).unwrap();
+      console.log("login success");
+    } catch (error) {
+      console.error("error in login in frontend", error)
+    }
     console.log("Form Data:", formData);
     // Simulate login success
     navigate("/")
