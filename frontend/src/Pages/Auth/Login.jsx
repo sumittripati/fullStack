@@ -25,11 +25,11 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(formData).unwrap();
-      console.log("login success");
+      console.log("login success", formData);
     } catch (error) {
-      console.error("error in login in frontend", error)
+      console.log(error?.data?.message)
+      return;
     }
-    console.log("Form Data:", formData);
     // Simulate login success
     navigate("/")
   }
