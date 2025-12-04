@@ -15,9 +15,9 @@ app.use(cors({
   credentials: true
 }));
 
+app.use('/curd', curdRouter)
 app.use('/api', authRouter)
 app.use('/buy', protectRoute)
-app.use('/curd', curdRouter)
 
 app.get('/', (req, res) => {
     res.status(200).json({ message: "hello world" })
